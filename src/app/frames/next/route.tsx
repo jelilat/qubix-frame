@@ -9,11 +9,7 @@ const handleRequest = frames(async (ctx) => {
         {ctx.message?.inputText == "FARCASTER" ? "Correct ✅" : "Incorrect ❌"}
       </span>
     ),
-    buttons: [
-      <Button action="post" target="/">
-        Previous frame
-      </Button>,
-    ],
+    buttons: [],
   };
 });
 
