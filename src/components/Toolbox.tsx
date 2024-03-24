@@ -258,9 +258,13 @@ const AddFrame = ({
             ) : (
               <input
                 type="file"
-                onChange={(e) =>
-                  setImage({ ...image, value: e.target.files?.[0].name || "" })
-                }
+                onChange={(e) => {
+                  if (e.target.files && e.target.files[0]) {
+                    const file = e.target.files[0];
+                    const url = URL.createObjectURL(file);
+                    setImage({ type: "file", value: url });
+                  }
+                }}
               />
             )}
           </div>

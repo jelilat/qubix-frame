@@ -13,7 +13,7 @@ export async function generateMetadata(queryParams: Record<string, string>) {
     // provide a full URL to your /frames endpoint with added query parameters
     other: await fetchMetadata(
       new URL(
-        `/api/frame?${searchParams}`,
+        `/frames`,
         process.env.VERCEL_URL
           ? `https://${process.env.VERCEL_URL}`
           : "http://localhost:3000"
